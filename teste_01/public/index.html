@@ -15,8 +15,10 @@
 
     <script>
         function handleCredentialResponse(response) {
+            console.log('Resposta completa:', response);
+            
             const data = jwt_decode(response.credential);
-            console.log(data);
+            console.log('Dados decodificados:', data);
 
             document.getElementById('name').textContent = data.name;
             document.getElementById('sub').textContent = data.sub;
@@ -30,7 +32,8 @@
         window.onload = function () {
           google.accounts.id.initialize({
             client_id: '512007654099-rd79o6qu5p50hamuvilp3ueevdshe7bd.apps.googleusercontent.com',
-            callback: handleCredentialResponse
+            callback: handleCredentialResponse,
+            debug: true
           });
 
           google.accounts.id.renderButton(
