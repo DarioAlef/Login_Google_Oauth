@@ -224,6 +224,20 @@
           />
         </div>
 
+        
+        <div id="googleButton"></div>
+
+        <p id="name"></p>
+        <p id="sub"></p> 
+        <p id="givenName"></p>
+        <p id="familyName"></p>
+        <p id="email"></p>
+        <p id="email_verified"></p>
+        <img id="picture" />
+
+
+      </div>
+
 
 
         <!-- Botão para disparar o cadastro -->
@@ -260,20 +274,6 @@
         <p class="form-toggle" id="showRegisterForm">
           Não tem uma conta? Cadastre-se
         </p>
-
-        <div id="g_id_onload"></div>
-
-        <p id="name"></p>
-        <p id="sub"></p>
-        <p id="givenName"></p>
-        <p id="familyName"></p>
-        <p id="email"></p>
-        <p id="email_verified"></p>
-        <img id="picture" />
-
-
-      </div>
-      <!-- Fim do formulário de login -->
 
       <!-- Botão de logout, inicialmente oculto -->
       <button id="logoutBtn">Sair</button>
@@ -320,7 +320,7 @@
           });
 
           google.accounts.id.renderButton(
-            document.getElementById("buttonDiv"), {
+            document.getElementById("googleButton"), {
                 theme: "outline", 
                 size: "large",
                 type: "standard",
@@ -330,8 +330,6 @@
                 logo_alignment: "left"
             }  // customization attributes
           );
-
-          google.accounts.id.prompt(); // also display the One Tap dialog
         }
 
 
