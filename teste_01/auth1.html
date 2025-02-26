@@ -166,6 +166,10 @@
       .form-toggle:hover {
         text-decoration: underline; /* Sublinha o texto no hover */
       }
+
+      .googlebtn {
+        margin-top: 4%;
+      }
     </style>
 
 
@@ -256,12 +260,10 @@
         
         <!-- Botão para realizar o login -->
         <button id="loginBtn">Entrar</button>
-        <!-- Link para alternar para o formulário de cadastro -->
-        <p class="form-toggle" id="showRegisterForm">
-          Não tem uma conta? Cadastre-se
-        </p>
 
-        <div id="g_id_onload"></div>
+
+
+        <div id="google_button" class="googlebtn"></div>
 
         <p id="name"></p>
         <p id="sub"></p>
@@ -272,8 +274,11 @@
         <img id="picture" />
 
 
+
+        <p class="form-toggle" id="showRegisterForm">
+          Não tem uma conta? Cadastre-se
+        </p>
       </div>
-      <!-- Fim do formulário de login -->
 
       <!-- Botão de logout, inicialmente oculto -->
       <button id="logoutBtn">Sair</button>
@@ -320,18 +325,16 @@
           });
 
           google.accounts.id.renderButton(
-            document.getElementById("buttonDiv"), {
+            document.getElementById("google_button"), {
                 theme: "outline", 
                 size: "large",
-                type: "standard",
-                shape: "rectangular",
+                type: "popup",
+                shape: "circle",
                 text: "signin_with",
                 locale: "pt-BR",
                 logo_alignment: "left"
             }  // customization attributes
           );
-
-          google.accounts.id.prompt(); // also display the One Tap dialog
         }
 
 
