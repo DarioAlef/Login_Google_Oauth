@@ -1,10 +1,18 @@
+
+/////////  Integração com a Back4app
+
+// Adicione as constantes para as chaves do Parse
+const APPLICATION_ID = "V4igAuo1eG96xFdcdPev68oL9Z0IXAbYbjPOpNa8";
+const JAVASCRIPT_KEY = "77uXiddHdFVAJ29GErTFTMoaPSv4IFiKZHw1JTgM"; 
+const MASTER_KEY = "YrhMtiZIJZyXxobAkMtlw6neNiUXlMXjB7xPiTHx"; 
+
+// Inicialize o Parse com as chaves
+Parse.initialize(APPLICATION_ID, JAVASCRIPT_KEY);
+Parse.masterKey = MASTER_KEY; // Defina a Master Key
+
+
 const Product = Parse.Object.extend("Produto");
 const Marca = Parse.Object.extend("Marca");
-
-// Parse.Cloud.define("hello", (request) => {
-//   const name = request.params.name;
-//  return("Hello, " + name + "!");
-// });
 
 Parse.Cloud.define("criar-produto", async (request) => {
   const Estoque = request.params.Estoque;

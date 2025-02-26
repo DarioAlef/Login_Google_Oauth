@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <title>Autenticação com Parse</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.4.2/parse.min.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+
+
+
+    <div class="container">
+      <h2>Autenticação Parse</h2>
+      <p id="welcome"></p>
+
+      <div id="registerForm">
+        <div class="input-group">
+          <label for="registerName">Nome Completo</label>
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Digite seu nome completo"
+          />
+        </div>
+        <div class="input-group">
+          <label for="registerEmail">E-mail</label>
+          <input
+            type="email"
+            id="registerEmail"
+            placeholder="Digite seu e-mail"
+          />
+        </div>
+        <div class="input-group">
+          <label for="registerPhone">Telefone</label>
+          <input
+            type="tel"
+            id="registerPhone"
+            placeholder="Digite seu telefone"
+          />
+        </div>
+        <div class="input-group">
+          <label for="registerPassword">Senha</label>
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Digite sua senha"
+          />
+        </div>
+
+        <button id="registerBtn">Cadastrar</button>
+        <p class="form-toggle" id="showLoginForm">
+          Já tem uma conta? Faça login
+        </p>
+      </div>
+
+      <div id="loginForm" style="display: none">
+        <div class="input-group">
+          <label for="loginEmail">E-mail</label>
+          <input type="email" id="loginEmail" placeholder="Digite seu e-mail" />
+        </div>
+        <div class="input-group">
+          <label for="loginPassword">Senha</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Digite sua senha"
+          />
+        </div>
+        
+        <button id="loginBtn">Entrar</button>
+
+
+
+        <div id="google_button" class="googlebtn"></div>
+
+        <p id="name"></p>
+        <p id="sub"></p>
+        <p id="givenName"></p>
+        <p id="familyName"></p>
+        <p id="email"></p>
+        <p id="email_verified"></p>
+        <img id="picture" />
+
+
+
+        <p class="form-toggle" id="showRegisterForm">
+          Não tem uma conta? Cadastre-se
+        </p>
+      </div>
+
+      <button id="logoutBtn">Sair</button>
+
+      <p id="message"></p>
+    </div>
+
+    <script src="./script.js"></script>
+
+    <script src="../cloud/main.js"></script>
+
+  </body>
+</html>
